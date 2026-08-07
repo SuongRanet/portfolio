@@ -1,0 +1,137 @@
+import React from "react";
+import ProgressBar from "../componets/ProgressBar";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaJava,
+  FaGitAlt,
+} from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiPhp, SiMysql } from "react-icons/si";
+import { motion } from "framer-motion";
+const Skill = () => {
+  return (
+    
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="mb-4">
+        <div className="py-8">
+          <h1 className="lg:text-2xl xl:text-3xl font-english font-bold">
+            {" "}
+            Technical Proficiency
+          </h1>
+        </div>
+        <div className="flex flex-col gap-4">
+          <ProgressBar
+            value={90}
+            icon={
+              <FaHtml5
+                size={36}
+                className="text-orange-600  hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-orange-600"}
+            label={"HTML5"}
+          />
+          <ProgressBar
+            value={90}
+            icon={
+              <FaCss3Alt
+                size={36}
+                className="text-blue-600 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-blue-600"}
+            label={"CSS3"}
+          />
+          <ProgressBar
+            value={78}
+            icon={
+              <FaJs
+                size={36}
+                className="text-yellow-400 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-yellow-400"}
+            label={"JavaScript"}
+          />
+          <ProgressBar
+            value={78}
+            icon={
+              <FaReact
+                size={36}
+                className="text-cyan-400 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-cyan-400"}
+            label={"ReactJS"}
+          />
+          <ProgressBar
+            value={52}
+            icon={
+              <FaJava
+                size={36}
+                className="text-red-500 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-red-500"}
+            label={"Java"}
+          />
+          <ProgressBar
+            value={85}
+            icon={
+              <RiTailwindCssFill
+                size={36}
+                className="text-cyan-400 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-cyan-400"}
+            label={"tailwind"}
+          />
+          <ProgressBar
+            value={54}
+            icon={
+              <SiPhp
+                size={36}
+                className="text-indigo-950 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-indigo-950"}
+            label={"PHP"}
+          />
+          <ProgressBar
+            value={56}
+            icon={
+              <SiMysql
+                size={36}
+                className="text-indigo-800 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-indigo-800"}
+            label={"MySQL"}
+          />
+          <ProgressBar
+            value={48}
+            S
+            icon={
+              <FaGitAlt
+                size={36}
+                className="text-orange-600 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-black"}
+            label={"Git"}
+          />
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+export default Skill;
