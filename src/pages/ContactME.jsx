@@ -31,7 +31,7 @@ const ContactME = () => {
               <p>Phone number: +855 964888551</p>
               <p>Email: suongranet98@gmail.com</p>
             </div>
-            <div className="flex gap-10 justify-center my-4 md:my-0">
+            <div className="flex gap-10 justify-center xl:justify-start my-4 md:my-0">
               <FaFacebookF size={24} className="hover:text-blue-600" />
               <FiGithub size={24} className="hover:text-orange-600" />
               <FaLinkedinIn size={24} className="hover:text-blue-600" />

@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import Swal from "sweetalert2";
 
 function Contact() {
   const form = useRef();
@@ -13,12 +14,20 @@ function Contact() {
       })
       .then(
         () => {
-          alert("Email sent!");
+          Swal.fire({
+            title: "Email sent!",
+            icon: "success",
+            draggable: true,
+          });
           form.current.reset();
         },
         (error) => {
+          Swal.fire({
+            title: "Failed to send",
+            icon: "error",
+            draggable: true,
+          });
           console.log(error);
-          alert("Failed to send");
         },
       );
   };
@@ -26,13 +35,34 @@ function Contact() {
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div className="flex flex-col gap-4 w-full lg:w-90 xl:w-120">
-        <input className="outline-none border-b py-2" name="from_name" placeholder="Your Name" />
+        <input
+          required
+          className="outline-none border-b py-2"
+          name="name"
+          placeholder="Your Name"
+        />
+        <input type="hidden" name="time" value={new Date().toLocaleString()} />
+        <input
+          required
+          className="outline-none border-b py-2"
+          name="name2"
+          placeholder="Your Email"
+        />
 
-        <input className="outline-none border-b py-2" name="reply_to" placeholder="Your Email" />
+        <input
+          required
+          className="outline-none border-b py-2"
+          name="message"
+          placeholder="Message"
+        />
 
-        <input className="outline-none border-b py-2" name="message" placeholder="Message" />
-
-        <button className="bg-primary hover:bg-primary-hover p-2 text-white" type="submit">Send</button>
+        <button
+          required
+          className="bg-primary hover:bg-primary-hover p-2 text-white"
+          type="submit"
+        >
+          Send
+        </button>
       </div>
     </form>
   );
