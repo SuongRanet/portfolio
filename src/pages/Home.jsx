@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Eye, ArrowDownToLine } from "lucide-react";
 import { motion } from "framer-motion";
+import profile from "../assets/images/white_bg.jpg"
 import {
   FaHtml5,
   FaCss3Alt,
@@ -94,7 +95,7 @@ const Home = () => {
           >
             <img
               className="lg:h-80 xl:h-120 rounded-2xl "
-              src="src/assets/images/white_bg.jpg"
+              src={profile}
               alt=""
             />
           </motion.div>

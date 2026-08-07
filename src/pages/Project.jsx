@@ -1,6 +1,9 @@
 import React from "react";
 import Card from "../componets/Card";
 import { motion } from "framer-motion";
+import motobike from "../assets/images/motobike.jpg"
+import sms from "../assets/images/sms_ui.png"
+import port from "../assets/images/myport.png"
 
 const Project = () => {
   return (
@@ -20,19 +23,19 @@ const Project = () => {
             name={"MotorBike Rental"}
             decription={"MotorBike Rental system clear UI with CRUD"}
             tech={["PHP", "HTML5", "CSS3", "Tailwaind", "MySQL"]}
-            img={"src/assets/images/motobike.jpg"}
+            img={motobike}
           />
           <Card
             name={"School Management"}
             decription={"School Management System Digital "}
             tech={["ReactJS", "HTML5", "CSS3", "Tailwaind", "MySQL", "JAVA"]}
-            img={"src/assets/images/sms_ui.png"}
+            img={sms}
           />
           <Card
             name={"Portfolio"}
             decription={"This is my portfolio"}
             tech={["ReactJS", "HTML5", "CSS3", "Tailwaind"]}
-            img={"src/assets/images/myport.png"}
+            img={port}
           />
         </div>
       </div>
