@@ -1,0 +1,18 @@
+//-Path: "\vite\src\components\Providers.jsx"
+import { useEffect } from "react";
+import useThemeStore from "../store/themeStore.js";
+
+function Providers({ children }) {
+  const { theme } = useThemeStore();
+
+  useEffect(() => {
+    const html = window.document.documentElement;
+    if (theme === "dark") html.classList.add("dark");
+    else html.classList.remove("dark");
+  }, [theme]);
+
+  return <>
+  {children}</>;
+}
+
+export default Providers;

@@ -2,7 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { Eye, ArrowDownToLine } from "lucide-react";
 import { motion } from "framer-motion";
-import profile from "../assets/images/white_bg.jpg"
+import profile from "../assets/images/white_bg.jpg";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -71,14 +71,14 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="/CV_RANET.pdf"
-            className=" flex text-[10px] xl:text-[18px] px-2 items-center gap-0.5 bg-primary lg:text-sm rounded-xl lg:px-2 py-2 text-white hover:bg-primary-hover duration-300 ease-in-out hover:scale-115"
+            className=" flex text-[10px] xl:text-[18px] px-2 items-center gap-0.5 bg-primary lg:text-sm rounded-md lg:px-2 py-2 text-white hover:bg-primary-hover duration-300 ease-in-out hover:scale-105"
           >
             <Eye /> View CV
           </a>
           <a
             href="/CV_RANET.pdf"
             download="Suong-Ranet-Resume.pdf"
-            className="flex gap-0.5 bg-primary xl:text-[18px] px-2 items-center text-[10px] lg:text-sm rounded-xl lg:px-2 py-2 text-white hover:bg-primary-hover duration-300 ease-in-out hover:scale-115"
+            className="flex gap-0.5 bg-primary xl:text-[18px] px-2 items-center text-[10px] lg:text-sm rounded-md lg:px-2 py-2 text-white hover:bg-primary-hover duration-300 ease-in-out hover:scale-105"
           >
             <ArrowDownToLine /> Download CV
           </a>

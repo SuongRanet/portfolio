@@ -4,7 +4,7 @@ import Skill from "./Skill";
 import Project from "./Project";
 import Education from "./Education";
 import ContactME from "./ContactME";
-import ScrollTopButton from "../componets/ScrollTopButton.jsx";
+import ScrollTopButton from "../components/ScrollTopButton.jsx";
 import { motion } from "framer-motion";
 
 const HeroPage = () => {

@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { Menu, X , Moon,Sun} from "lucide-react";
+import useThemeStore from "../store/themeStore";
 
 const Header = ({ isOpen, onMenuToggle }) => {
+  const { theme, setTheme } = useThemeStore();
   return (
     <header className="flex justify-between items-center p-4 md:px-34 py-8 backdrop-blur-sm border-b-4 border-primary bg-background/50">
       {/* Logo */}
@@ -11,38 +13,63 @@ const Header = ({ isOpen, onMenuToggle }) => {
       </div>
 
       {/* Navigation */}
-      <nav>
+      <nav className="flex gap-8">
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>{theme === "light" ? <Moon/> : <Sun/>}</button>
         <ul className="lg:flex items-center justify-end lg:gap-4 gap-8 text-primary font-medium hidden">
-          <Link
+          <NavLink
             to="/"
-            className="cursor-pointer hover:primary-hover transition-transform duration-300 hover:scale-125"
+            className={({ isActive }) =>
+              `cursor-pointer transition-all duration-300 hover:scale-125 ${
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }`
+            }
           >
             HOME
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/skill"
-            className="cursor-pointer hover:primary-hover transition-transform duration-300 hover:scale-125"
+            className={({ isActive }) =>
+              `cursor-pointer transition-all duration-300 hover:scale-125 ${
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }`
+            }
           >
             SKILL
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/project"
-            className="cursor-pointer hover:primary-hover transition-transform duration-300 hover:scale-125"
+            className={({ isActive }) =>
+              `cursor-pointer transition-all duration-300 hover:scale-125 ${
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }`
+            }
           >
             PROJECT
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/education"
-            className="cursor-pointer hover:primary-hover transition-transform duration-300 hover:scale-125"
+            className={({ isActive }) =>
+              `cursor-pointer transition-all duration-300 hover:scale-125 ${
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }`
+            }
           >
             EDUCATION
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/contact"
-            className="cursor-pointer hover:primary-hover transition-transform duration-300 hover:scale-125"
+            className={({ isActive }) =>
+              `cursor-pointer transition-all duration-300 hover:scale-125 ${
+                isActive ? "text-primary font-bold" : "text-gray-500"
+              }`
+            }
           >
             CONTACT ME
-          </Link>
+          </NavLink>
         </ul>
         <button onClick={onMenuToggle} className="duration-300 lg:hidden">
           {isOpen ? <X /> : <Menu />}

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Header from "../header/Header.jsx";
 import HeroPage from "./HeroPage.jsx";
 import Footer from "../footer/Footer.jsx";
-import SideBar from "../componets/SideBar.jsx";
+import SideBar from "../components/SideBar.jsx";
 import { Outlet } from "react-router-dom";
+import ClickSpark from '../components/animation/ClickSpark';
+import useThemeStore from "../store/themeStore";
 
 const MainPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const { theme } = useThemeStore();
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
@@ -18,21 +20,30 @@ const MainPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* HEADER */}
-      <div className="sticky top-0 z-50">
-        <Header isOpen={isSidebarOpen} onMenuToggle={toggleSidebar} />
-      </div>
+      <ClickSpark
+        sparkColor={theme === "dark" ? "#ffffff" : "#000000"}
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        {/* Your content here */}
+        {/* HEADER */}
+        <div className="sticky top-0 z-50">
+          <Header isOpen={isSidebarOpen} onMenuToggle={toggleSidebar} />
+        </div>
 
-      {/* Main Section */}
-      <div className="lg:w-[80%] m-auto px-4 md:px-0">
-        <Outlet />
-      </div>
+        {/* Main Section */}
+        <div className="lg:w-[80%] m-auto px-4 md:px-0">
+          <Outlet />
+        </div>
 
-      {/* FOOTER */}
-      <div className="bottom-0 left-0 w-full bg-red-200 text-center ">
-        <Footer />
-      </div>
-      <SideBar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+        {/* FOOTER */}
+        <div className="bottom-0 left-0 w-full bg-red-200 text-center ">
+          <Footer />
+        </div>
+        <SideBar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+      </ClickSpark>
     </div>
   );
 };

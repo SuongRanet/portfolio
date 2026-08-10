@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "../componets/Contact";
+import Contact from "../components/Contact";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa6";

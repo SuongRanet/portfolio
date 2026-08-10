@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 
 const SideBar = ({ isOpen, closeSidebar }) => {
@@ -30,49 +30,59 @@ const SideBar = ({ isOpen, closeSidebar }) => {
           <nav>
             <ul className="space-y-4 text-lg">
               <li>
-                <Link
+                <NavLink
                   to="/"
                   onClick={closeSidebar}
-                  className="block hover:text-primary-hover"
+                  className={({isActive})=>`block hover:text-primary-hover
+                  ${isActive ? "text-primary font-bold" : "text-gray-500"}
+                  `}
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/skill"
                   onClick={closeSidebar}
-                  className="block hover:text-primary-hover"
+                  className={({isActive})=>`block hover:text-primary-hover
+                  ${isActive ? "text-primary font-bold" : "text-gray-500"}
+                  `}
                 >
                   Skill
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/project"
                   onClick={closeSidebar}
-                  className="block hover:text-primary-hover"
+                  className={({isActive})=>`block hover:text-primary-hover
+                  ${isActive ? "text-primary font-bold" : "text-gray-500"}
+                  `}
                 >
                   Project
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/education"
                   onClick={closeSidebar}
-                  className="block hover:text-primary-hover"
+                 className={({isActive})=>`block hover:text-primary-hover
+                  ${isActive ? "text-primary font-bold" : "text-gray-500"}
+                  `}
                 >
                   Education
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/contact"
                   onClick={closeSidebar}
-                  className="block hover:text-primary-hover"
+                  className={({isActive})=>`block hover:text-primary-hover
+                  ${isActive ? "text-primary font-bold" : "text-gray-500"}
+                  `}
                 >
                   Contact Me
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>

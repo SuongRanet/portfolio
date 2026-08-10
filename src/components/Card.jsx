@@ -1,10 +1,15 @@
 import { Grid } from "lucide-react";
 import React from "react";
+import SpotlightCard from "./animation/GlareHover";
+
 
 const Card = ({ name, decription, tech = [], grid, img }) => {
+  
+
   return (
-    <div
-      className={`group bg-primary/10 w-full rounded-sm shadow-sm flex flex-col overflow-hidden ${grid}`}
+    <SpotlightCard
+      className="custom-spotlight-card"
+      spotlightColor="rgba(0, 229, 255, 0.2)"
     >
       {/* Image */}
       <div className="overflow-hidden">
@@ -14,7 +19,6 @@ const Card = ({ name, decription, tech = [], grid, img }) => {
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
-
       {/* Content */}
       <div>
         <div className="p-4">
@@ -33,7 +37,7 @@ const Card = ({ name, decription, tech = [], grid, img }) => {
           ))}
         </div>
       </div>
-    </div>
+    </SpotlightCard>
   );
 };
 

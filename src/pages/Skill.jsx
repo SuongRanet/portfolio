@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBar from "../componets/ProgressBar";
+import ProgressBar from "../components/ProgressBar";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -13,7 +13,6 @@ import { SiPhp, SiMysql } from "react-icons/si";
 import { motion } from "framer-motion";
 const Skill = () => {
   return (
-    
     <motion.section
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}

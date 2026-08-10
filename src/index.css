@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-.khmerFont{
+.khmerFont {
   font-family: "Noto Serif Khmer", serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -10,28 +10,33 @@
 }
 
 :root {
-  --color-primary: #16a34a; /* Main brand color: buttons, links, active states */
-  --color-primary-hover: #15803d; /* Hover color for buttons and interactive elements */
-
-  --color-background: #ffffff; /* Main page background */
-  --color-card: #f8fafc; /* Card, panel, and container background */
-  --color-text: #111827; /* Main text color (headings, paragraphs) */
-  --color-muted: #64748b; /* Secondary text color (description, labels) */
-
-  --color-border: #e5e7eb; /* Borders, dividers, input outlines */
+  --color-primary: #16a34a;
+  --color-primary-hover: #15803d;
+  --color-background: #ffffff;
+  --color-card: #f8fafc;
+  --color-text: #111827;
+  --color-muted: #64748b;
+  --color-border: #e5e7eb;
 }
 
-.dark {
-  --color-primary: #22c55e; /* Main brand color in dark mode */
-  --color-primary-hover: #16a34a; /* Hover color in dark mode */
-
-  --color-background: #0b1120; /* Main dark page background */
-  --color-card: #111827; /* Dark card and section background */
-  --color-text: #f8fafc; /* Main text color in dark mode */
-  --color-muted: #94a3b8; /* Secondary text in dark mode */
-
-  --color-border: #1f2937; /* Dark mode borders and separators */
+html.dark {
+  --color-primary: #22c55e;
+  --color-primary-hover: #16a34a;
+  --color-background: #0b1120;
+  --color-card: #111827;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: #1f2937;
 }
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
 @theme {
   --color-primary: var(--color-primary);
   --color-primary-hover: var(--color-primary-hover);
