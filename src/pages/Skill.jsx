@@ -50,7 +50,7 @@ const Skill = () => {
             label={"CSS3"}
           />
           <ProgressBar
-            value={78}
+            value={75}
             icon={
               <FaJs
                 size={36}
@@ -61,7 +61,7 @@ const Skill = () => {
             label={"JavaScript"}
           />
           <ProgressBar
-            value={78}
+            value={75}
             icon={
               <FaReact
                 size={36}
