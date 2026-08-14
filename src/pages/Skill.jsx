@@ -8,6 +8,7 @@ import {
   FaJava,
   FaGitAlt,
 } from "react-icons/fa";
+import { FaNode } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiPhp, SiMysql } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -70,6 +71,14 @@ const Skill = () => {
             }
             color={"bg-cyan-400"}
             label={"ReactJS"}
+          />
+          <ProgressBar
+          value={62}
+          icon={
+            <FaNode className="text-green-500 hover:scale-125 duration-300 ease-in-out"/>
+          }
+          color={"bg-green-500"}
+            label={"Node.JS"}
           />
           <ProgressBar
             value={52}
