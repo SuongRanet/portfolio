@@ -73,11 +73,14 @@ const Skill = () => {
             label={"ReactJS"}
           />
           <ProgressBar
-          value={62}
-          icon={
-            <FaNode className="text-green-500 hover:scale-125 duration-300 ease-in-out"/>
-          }
-          color={"bg-green-500"}
+            value={62}
+            icon={
+              <FaNode
+                size={36}
+                className="text-green-500 hover:scale-125 duration-300 ease-in-out"
+              />
+            }
+            color={"bg-green-500"}
             label={"Node.JS"}
           />
           <ProgressBar
