@@ -73,7 +73,7 @@ const Skill = () => {
             label={"ReactJS"}
           />
           <ProgressBar
-            value={62}
+            value={46}
             icon={
               <FaNode
                 size={36}
