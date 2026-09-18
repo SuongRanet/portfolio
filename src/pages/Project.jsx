@@ -13,15 +13,14 @@ const Project = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
-      <div className="w-full mb-4">
-        <div className="py-8">
-          <h1 className="lg:text-2xl xl:text-3xl font-english font-bold">
+      <div className="w-full py-12 md:py-16">
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-3xl font-english font-bold tracking-tight">
             My Projects
           </h1>
         </div>
-        <div className="grid  lg:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center​​​ ">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,19rem),1fr))] gap-6">
           <Card
-            className=""
             name={"MotorBike Rental"}
             decription={"MotorBike Rental system clear UI with CRUD"}
             tech={["PHP", "HTML5", "CSS3", "Tailwaind", "MySQL"]}

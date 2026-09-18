@@ -22,16 +22,20 @@ const ProgressBar = ({ value, label, icon, color }) => {
   }, [value]);
 
   return (
-    <div ref={ref} className="w-full">
-      <div className="mb-2 flex justify-between">
-        <span className="flex gap-2 items-end">{icon}{label}</span>
-        <span>{progress}%</span>
+    <div ref={ref} className="glass w-full rounded-2xl p-4 sm:p-5">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <span className="flex items-center gap-3 font-medium min-w-0">
+          <span className="shrink-0 grid place-items-center size-11">{icon}</span>
+          <span className="truncate">{label}</span>
+        </span>
+        <span className="tabular-nums text-sm text-muted">{progress}%</span>
       </div>
 
-      <div className="h-3 w-full rounded-full bg-gray-300 overflow-hidden">
+      <div className="h-2 w-full rounded-full bg-track overflow-hidden">
+        {/* scaleX instead of width: composited, no layout per frame */}
         <div
-          className={`h-full rounded-full ${color} transition-all duration-1000`}
-          style={{ width: `${progress}%` }}
+          className={`h-full w-full rounded-full origin-left ${color} transition-transform duration-1000 ease-out will-change-transform`}
+          style={{ transform: `scaleX(${progress / 100})` }}
         />
       </div>
     </div>

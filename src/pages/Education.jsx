@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const item =
+  "glass lift relative flex flex-col gap-1 text-lg sm:text-xl md:text-2xl font-medium p-5 sm:p-6 pl-8 sm:pl-10 rounded-2xl before:absolute before:left-4 sm:before:left-5 before:top-7 sm:before:top-8 before:size-2 before:rounded-full before:bg-primary before:shadow-[0_0_0_4px] before:shadow-primary/20";
 
 const Education = () => {
   return (
@@ -10,22 +12,22 @@ const Education = () => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mb-4 h-115 flex flex-col justify-end">
-        <div className="py-8">
-          <h1 className="lg:text-2xl md:text-2xl xl:text-3xl font-english font-bold">Education</h1>
+      <div className="py-12 md:py-16 flex flex-col">
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-3xl font-english font-bold tracking-tight">Education</h1>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col text-md md:text-2xl hover:scale-101 hover:bg-primary/10 p-4 rounded-xl duration-300">
+          <div className={item}>
             Study Software Development - Norton University{" "}
-            <span className="text-xl text-muted">2023 to present</span>
+            <span className="text-base sm:text-lg font-normal text-muted">2023 to present</span>
           </div>
-          <div className="flex flex-col text-md md:text-2xl hover:scale-101 hover:bg-primary/10 p-4 rounded-xl duration-300">
+          <div className={item}>
             Koub High School{" "}
-            <span className="text-xl text-muted">2020 to 2023</span>
+            <span className="text-base sm:text-lg font-normal text-muted">2020 to 2023</span>
           </div>
-          <div className="flex flex-col text-md md:text-2xl hover:scale-101 hover:bg-primary/10 p-4 rounded-xl duration-300">
+          <div className={item}>
             Koub High School Secondary School{" "}
-            <span className="text-xl text-muted">2017 to 2020</span>
+            <span className="text-base sm:text-lg font-normal text-muted">2017 to 2020</span>
           </div>
         </div>
       </div>

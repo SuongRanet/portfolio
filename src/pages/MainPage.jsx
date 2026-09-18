@@ -5,6 +5,7 @@ import Footer from "../footer/Footer.jsx";
 import SideBar from "../components/SideBar.jsx";
 import { Outlet } from "react-router-dom";
 import ClickSpark from '../components/animation/ClickSpark';
+import DotField from '../components/animation/DotField';
 import useThemeStore from "../store/themeStore";
 
 const MainPage = () => {
@@ -19,7 +20,19 @@ const MainPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh">
+      {/* Interactive dot background — fixed behind all content */}
+      <div aria-hidden className="fixed inset-0 -z-10 pointer-events-none">
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={14}
+          bulgeStrength={67}
+          glowRadius={160}
+          gradientFrom={theme === "dark" ? "rgba(74, 222, 128, 0.35)" : "rgba(22, 163, 74, 0.3)"}
+          gradientTo={theme === "dark" ? "rgba(148, 163, 184, 0.2)" : "rgba(100, 116, 139, 0.22)"}
+          glowColor={theme === "dark" ? "#0b0f17" : "#f8fafd"}
+        />
+      </div>
       <ClickSpark
         sparkColor={theme === "dark" ? "#ffffff" : "#000000"}
         sparkSize={10}
@@ -34,12 +47,12 @@ const MainPage = () => {
         </div>
 
         {/* Main Section */}
-        <div className="lg:w-[80%] m-auto px-4 md:px-0">
+        <main className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Outlet />
-        </div>
+        </main>
 
         {/* FOOTER */}
-        <div className="bottom-0 left-0 w-full bg-red-200 text-center ">
+        <div className="w-full text-center mt-16">
           <Footer />
         </div>
         <SideBar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />

@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const HeroPage = () => {
   return (
     <>
-      <div className="md:w-[80%] m-auto">
+      <div className="w-full">
         <section id="home">
           <motion.section
             initial={{ opacity: 0, scale: 0.95 }}

@@ -9,7 +9,7 @@ function ScrollTopButton() {
       setShow(window.scrollY > 500);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,7 +23,8 @@ function ScrollTopButton() {
           behavior: "smooth",
         })
       }
-      className="fixed bottom-6 right-6 bg-primary text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+      aria-label="Scroll to top"
+      className="tap fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-4 sm:right-6 z-40 size-12 bg-primary text-on-primary rounded-full shadow-lg shadow-primary/30 hover:scale-110 transition-transform duration-300"
     >
       <FaArrowUp />
     </button>

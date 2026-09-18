@@ -12,22 +12,24 @@ const ClickSpark = ({
 }) => {
   const canvasRef = useRef(null);
   const sparksRef = useRef([]);
-  const startTimeRef = useRef(null);
+  const animationRef = useRef(null);
 
+  // Viewport-sized (fixed) canvas instead of a full-document one: bounded memory
+  // no matter how long the page is. Scaled for device pixel ratio.
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const parent = canvas.parentElement;
-    if (!parent) return;
-
     let resizeTimeout;
 
     const resizeCanvas = () => {
-      const { width, height } = parent.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const width = Math.round(window.innerWidth * dpr);
+      const height = Math.round(window.innerHeight * dpr);
       if (canvas.width !== width || canvas.height !== height) {
         canvas.width = width;
         canvas.height = height;
+        canvas.getContext('2d').setTransform(dpr, 0, 0, dpr, 0, 0);
       }
     };
 
@@ -36,13 +38,11 @@ const ClickSpark = ({
       resizeTimeout = setTimeout(resizeCanvas, 100);
     };
 
-    const ro = new ResizeObserver(handleResize);
-    ro.observe(parent);
-
+    window.addEventListener('resize', handleResize, { passive: true });
     resizeCanvas();
 
     return () => {
-      ro.disconnect();
+      window.removeEventListener('resize', handleResize);
       clearTimeout(resizeTimeout);
     };
   }, []);
@@ -63,17 +63,12 @@ const ClickSpark = ({
     [easing]
   );
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let animationId;
-
-    const draw = timestamp => {
-      if (!startTimeRef.current) {
-        startTimeRef.current = timestamp;
-      }
+  // The draw loop only runs while sparks are alive; it stops itself when idle.
+  const draw = useCallback(
+    timestamp => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       sparksRef.current = sparksRef.current.filter(spark => {
@@ -103,22 +98,22 @@ const ClickSpark = ({
         return true;
       });
 
-      animationId = requestAnimationFrame(draw);
-    };
+      animationRef.current = sparksRef.current.length
+        ? requestAnimationFrame(draw)
+        : null;
+    },
+    [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]
+  );
 
-    animationId = requestAnimationFrame(draw);
-
+  useEffect(() => {
     return () => {
-      cancelAnimationFrame(animationId);
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
+  }, []);
 
   const handleClick = e => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = e.clientX;
+    const y = e.clientY;
 
     const now = performance.now();
     const newSparks = Array.from({ length: sparkCount }, (_, i) => ({
@@ -129,11 +124,18 @@ const ClickSpark = ({
     }));
 
     sparksRef.current.push(...newSparks);
+    if (!animationRef.current) {
+      animationRef.current = requestAnimationFrame(draw);
+    }
   };
 
   return (
     <div className="relative w-full h-full" onClick={handleClick}>
-      <canvas ref={canvasRef} className="w-full h-full block absolute top-0 left-0 select-none pointer-events-none" />
+      <canvas
+        ref={canvasRef}
+        aria-hidden
+        className="fixed inset-0 z-[60] w-screen h-dvh block select-none pointer-events-none"
+      />
       {children}
     </div>
   );

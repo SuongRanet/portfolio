@@ -1,5 +1,6 @@
 //-Path: "\vite\src\components\Providers.jsx"
 import { useEffect } from "react";
+import { MotionConfig } from "framer-motion";
 import useThemeStore from "../store/themeStore.js";
 
 function Providers({ children }) {
@@ -11,8 +12,7 @@ function Providers({ children }) {
     else html.classList.remove("dark");
   }, [theme]);
 
-  return <>
-  {children}</>;
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
 
 export default Providers;

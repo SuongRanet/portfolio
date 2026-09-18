@@ -2,6 +2,9 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import Swal from "sweetalert2";
 
+const field =
+  "w-full min-h-12 rounded-xl border border-border bg-background/60 px-4 py-3 text-base text-text placeholder:text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/25";
+
 function Contact() {
   const form = useRef();
 
@@ -34,31 +37,31 @@ function Contact() {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className="flex flex-col gap-4 w-full lg:w-90 xl:w-120">
+      <div className="flex flex-col gap-4 w-full">
         <input
           required
-          className="outline-none border-b py-2"
+          className={field}
           name="name"
           placeholder="Your Name"
         />
         <input type="hidden" name="time" value={new Date().toLocaleString()} />
         <input
           required
-          className="outline-none border-b py-2"
+          className={field}
           name="name2"
           placeholder="Your Email"
         />
 
         <input
           required
-          className="outline-none border-b py-2"
+          className={field}
           name="message"
           placeholder="Message"
         />
 
         <button
           required
-          className="bg-primary hover:bg-primary-hover p-2 text-white"
+          className="lift min-h-12 rounded-xl bg-primary hover:bg-primary-hover px-6 font-semibold text-on-primary shadow-lg shadow-primary/20"
           type="submit"
         >
           Send

@@ -1,16 +1,24 @@
 import { useRef, useState } from "react";
 import useThemeStore from "../../store/themeStore";
+
+const SPOT_SIZE = 480;
+
 const SpotlightCard = ({ children, className = "", spotlightColor = "" }) => {
   const divRef = useRef(null);
+  const spotRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
   const { theme } = useThemeStore();
+
+  // Move the spotlight with a transform written straight to the DOM — no React
+  // re-render and no gradient repaint per mousemove.
   const handleMouseMove = (e) => {
-    if (!divRef.current || isFocused) return;
+    if (!divRef.current || !spotRef.current || isFocused) return;
 
     const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left - SPOT_SIZE / 2;
+    const y = e.clientY - rect.top - SPOT_SIZE / 2;
+    spotRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
   };
 
   const handleFocus = () => {
@@ -39,13 +47,17 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "" }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-lg border border-border/80 bg-background/10 shadow overflow-hidden p-8 ${className}`}
+      className={`group glass relative isolate rounded-2xl overflow-hidden ${className}`}
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
+        aria-hidden
+        ref={spotRef}
+        className="pointer-events-none absolute left-0 top-0 -z-10 rounded-full transition-opacity duration-500 ease-in-out will-change-transform"
         style={{
+          width: SPOT_SIZE,
+          height: SPOT_SIZE,
           opacity,
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
+          background: `radial-gradient(circle, ${spotlightColor}, transparent 70%)`,
         }}
       />
       {children}

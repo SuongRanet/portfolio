@@ -20,20 +20,20 @@ const Skill = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mb-4">
-        <div className="py-8">
-          <h1 className="lg:text-2xl xl:text-3xl font-english font-bold">
+      <div className="py-12 md:py-16">
+        <div className="mb-8">
+          <h1 className="text-2xl sm:text-3xl font-english font-bold tracking-tight">
             {" "}
             Technical Proficiency
           </h1>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,18rem),1fr))] gap-4">
           <ProgressBar
             value={90}
             icon={
               <FaHtml5
-                size={36}
-                className="text-orange-600  hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-orange-600"
               />
             }
             color={"bg-orange-600"}
@@ -43,8 +43,8 @@ const Skill = () => {
             value={90}
             icon={
               <FaCss3Alt
-                size={36}
-                className="text-blue-600 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-blue-600"
               />
             }
             color={"bg-blue-600"}
@@ -54,8 +54,8 @@ const Skill = () => {
             value={75}
             icon={
               <FaJs
-                size={36}
-                className="text-yellow-400 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-yellow-400"
               />
             }
             color={"bg-yellow-400"}
@@ -65,8 +65,8 @@ const Skill = () => {
             value={75}
             icon={
               <FaReact
-                size={36}
-                className="text-cyan-400 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-cyan-400"
               />
             }
             color={"bg-cyan-400"}
@@ -76,8 +76,8 @@ const Skill = () => {
             value={46}
             icon={
               <FaNode
-                size={36}
-                className="text-green-500 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-green-500"
               />
             }
             color={"bg-green-500"}
@@ -87,8 +87,8 @@ const Skill = () => {
             value={52}
             icon={
               <FaJava
-                size={36}
-                className="text-red-500 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-red-500"
               />
             }
             color={"bg-red-500"}
@@ -98,8 +98,8 @@ const Skill = () => {
             value={85}
             icon={
               <RiTailwindCssFill
-                size={36}
-                className="text-cyan-400 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-cyan-400"
               />
             }
             color={"bg-cyan-400"}
@@ -109,22 +109,22 @@ const Skill = () => {
             value={54}
             icon={
               <SiPhp
-                size={36}
-                className="text-indigo-950 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-indigo-400"
               />
             }
-            color={"bg-indigo-950"}
+            color={"bg-indigo-400"}
             label={"PHP"}
           />
           <ProgressBar
             value={56}
             icon={
               <SiMysql
-                size={36}
-                className="text-indigo-800 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-sky-500"
               />
             }
-            color={"bg-indigo-800"}
+            color={"bg-sky-500"}
             label={"MySQL"}
           />
           <ProgressBar
@@ -132,11 +132,11 @@ const Skill = () => {
             S
             icon={
               <FaGitAlt
-                size={36}
-                className="text-orange-600 hover:scale-125 duration-300 ease-in-out"
+                size={28}
+                className="text-orange-600"
               />
             }
-            color={"bg-black"}
+            color={"bg-orange-600"}
             label={"Git"}
           />
         </div>
