@@ -97,9 +97,9 @@ const Home = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
-          <div aria-hidden className="absolute -inset-3 rounded-[2rem] bg-primary/15 blur-2xl" />
+          <div aria-hidden className="absolute -inset-3 rounded-4xl bg-primary/15 blur-2xl" />
           <img
-            className="relative w-full h-auto aspect-[1351/1737] object-cover rounded-3xl border border-border shadow-2xl"
+            className="relative w-full h-auto aspect-1351/1737 object-cover rounded-3xl border border-border shadow-2xl"
             src={profile}
             width={1351}
             height={1737}
