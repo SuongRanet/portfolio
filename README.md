@@ -1,16 +1,132 @@
-# React + Vite
+# 👋 Hi, I'm Net Net
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 💻 Full-Stack Developer | Software Developer
 
-Currently, two official plugins are available:
+I'm a passionate developer from Cambodia who enjoys building web applications, learning new technologies, and solving technical problems.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Currently, I'm focusing on **Full-Stack Web Development, Backend Development**.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 About Me
 
-## Expanding the ESLint configuration
+* 💻 Interested in **Full-Stack Developer | Software Developer**
+* 🌱 Currently learning **React.js, TypeScript, Node.js, Express.js, PostgreSQL**
+* 🔐 Interested in **Authentication, Authorization & Cybersecurity**
+* 🌐 Learning **Networking, Servers, DNS, DHCP, Routing & Switching**
+* 🛠️ Enjoy building real-world projects
+* 📚 Always learning and improving my technical skills
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind" />
+</p>
+
+### Backend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=nodejs,express,ts" />
+</p>
+
+### Database
+
+<p>
+  <img src="https://skillicons.dev/icons?i=postgresql,mysql" />
+</p>
+
+### Tools & Technologies
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,postman,docker,linux" />
+</p>
+
+---
+
+## 📌 Featured Projects
+
+### 🎫 IT Support Ticket System
+
+A web-based IT support ticket management system that allows users to create and manage support requests.
+
+**Features:**
+
+* 🔐 User authentication
+* 👥 Role-based access control
+* 🎫 Ticket creation and management
+* 📎 Ticket attachments
+* 💬 Ticket comments
+* 👨‍💻 Ticket assignment
+* 📊 Ticket status tracking
+* 🔔 Notifications
+* 🗄️ PostgreSQL database
+* 🔒 Password hashing with Argon2
+* 🛡️ API validation with Zod
+
+**Tech Stack:**
+
+`React` `TypeScript` `Node.js` `Express.js` `PostgreSQL` `Zod`
+
+---
+
+### 🌐 Portfolio Website
+
+My personal portfolio website showcasing my skills, projects, and experience.
+
+🔗 **Live Demo:** [your-portfolio-url]
+
+**Tech Stack:**
+
+`React` `TypeScript` `Tailwind CSS`
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=SuongRanet&show_icons=true&theme=tokyonight&hide_border=true" height="170"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuongRanet&layout=compact&theme=tokyonight&hide_border=true" height="170"/>
+</p>
+
+---
+
+## 📈 GitHub Activity
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SuongRanet&theme=tokyonight&hide_border=true" />
+</p>
+
+---
+
+## 📫 Contact Me
+
+* 🌐 Portfolio: https://suongranet-portfolio.vercel.app/
+* 💻 GitHub: https://github.com/SuongRanet
+* 📧 Email: suongranet98@gmail.com
+* 💼 LinkedIn: https://www.linkedin.com/in/suong-ranet-0b03b53a5/
+
+---
+
+## 🎯 Current Goals
+
+* [ ] Improve Full-Stack Development skills
+* [ ] Build more real-world projects
+* [ ] Improve backend architecture
+* [ ] Learn Docker & deployment
+* [ ] Improve networking knowledge
+* [ ] Learn more about cybersecurity
+* [ ] Build and deploy professional applications
+
+---
+
+## ⚡ Fun Fact
+
+> I enjoy turning ideas into working applications and learning something new every day.
+
+---
+
+⭐ **Thanks for visiting my profile!**
