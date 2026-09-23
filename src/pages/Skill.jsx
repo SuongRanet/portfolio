@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBar from "../components/ProgressBar";
+import SkillTable from "../components/SkillTable";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -10,8 +10,118 @@ import {
 } from "react-icons/fa";
 import { FaNode } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiPhp, SiMysql } from "react-icons/si";
+import { SiPhp, SiMysql, SiPostgresql, SiClaude, SiGooglegemini } from "react-icons/si";
+import { TbBrandVscode, TbBrandOpenai } from "react-icons/tb";
 import { motion } from "framer-motion";
+import SectionHeading from "../components/SectionHeading";
+
+const ICON = 24;
+
+const skills = [
+  {
+    label: "HTML5",
+    value: 90,
+    category: "frontend",
+    color: "bg-orange-600",
+    icon: <FaHtml5 size={ICON} className="text-orange-600" />,
+  },
+  {
+    label: "CSS3",
+    value: 90,
+    category: "frontend",
+    color: "bg-blue-600",
+    icon: <FaCss3Alt size={ICON} className="text-blue-600" />,
+  },
+  {
+    label: "JavaScript",
+    value: 75,
+    category: "frontend",
+    color: "bg-yellow-400",
+    icon: <FaJs size={ICON} className="text-yellow-400" />,
+  },
+  {
+    label: "ReactJS",
+    value: 75,
+    category: "frontend",
+    color: "bg-cyan-400",
+    icon: <FaReact size={ICON} className="text-cyan-400" />,
+  },
+  {
+    label: "Node.JS",
+    value: 46,
+    category: "backend",
+    color: "bg-green-500",
+    icon: <FaNode size={ICON} className="text-green-500" />,
+  },
+  {
+    label: "Java",
+    value: 52,
+    category: "backend",
+    color: "bg-red-500",
+    icon: <FaJava size={ICON} className="text-red-500" />,
+  },
+  {
+    label: "Tailwind",
+    value: 85,
+    category: "frontend",
+    color: "bg-cyan-400",
+    icon: <RiTailwindCssFill size={ICON} className="text-cyan-400" />,
+  },
+  {
+    label: "PHP",
+    value: 54,
+    category: "backend",
+    color: "bg-indigo-400",
+    icon: <SiPhp size={ICON} className="text-indigo-400" />,
+  },
+  {
+    label: "MySQL",
+    value: 56,
+    category: "database",
+    color: "bg-sky-500",
+    icon: <SiMysql size={ICON} className="text-sky-500" />,
+  },
+  {
+    label: "PostgreSQL",
+    value: 72,
+    category: "database",
+    color: "bg-blue-500",
+    icon: <SiPostgresql size={ICON} className="text-blue-500" />,
+  },
+  {
+    label: "Git",
+    value: 48,
+    category: "tools",
+    color: "bg-orange-600",
+    icon: <FaGitAlt size={ICON} className="text-orange-600" />,
+  },
+  // Tools and AI assistants are shown as "daily" rather than a percentage.
+  {
+    label: "VS Code",
+    tag: "daily",
+    category: "tools",
+    icon: <TbBrandVscode size={ICON} className="text-sky-500" />,
+  },
+  {
+    label: "ChatGPT",
+    tag: "daily",
+    category: "ai",
+    icon: <TbBrandOpenai size={ICON} className="text-emerald-400" />,
+  },
+  {
+    label: "Claude Code",
+    tag: "daily",
+    category: "ai",
+    icon: <SiClaude size={ICON} className="text-orange-500" />,
+  },
+  {
+    label: "Gemini",
+    tag: "daily",
+    category: "ai",
+    icon: <SiGooglegemini size={ICON} className="text-violet-400" />,
+  },
+];
+
 const Skill = () => {
   return (
     <motion.section
@@ -21,125 +131,8 @@ const Skill = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="py-12 md:py-16">
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-english font-bold tracking-tight">
-            {" "}
-            Technical Proficiency
-          </h1>
-        </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,18rem),1fr))] gap-4">
-          <ProgressBar
-            value={90}
-            icon={
-              <FaHtml5
-                size={28}
-                className="text-orange-600"
-              />
-            }
-            color={"bg-orange-600"}
-            label={"HTML5"}
-          />
-          <ProgressBar
-            value={90}
-            icon={
-              <FaCss3Alt
-                size={28}
-                className="text-blue-600"
-              />
-            }
-            color={"bg-blue-600"}
-            label={"CSS3"}
-          />
-          <ProgressBar
-            value={75}
-            icon={
-              <FaJs
-                size={28}
-                className="text-yellow-400"
-              />
-            }
-            color={"bg-yellow-400"}
-            label={"JavaScript"}
-          />
-          <ProgressBar
-            value={75}
-            icon={
-              <FaReact
-                size={28}
-                className="text-cyan-400"
-              />
-            }
-            color={"bg-cyan-400"}
-            label={"ReactJS"}
-          />
-          <ProgressBar
-            value={46}
-            icon={
-              <FaNode
-                size={28}
-                className="text-green-500"
-              />
-            }
-            color={"bg-green-500"}
-            label={"Node.JS"}
-          />
-          <ProgressBar
-            value={52}
-            icon={
-              <FaJava
-                size={28}
-                className="text-red-500"
-              />
-            }
-            color={"bg-red-500"}
-            label={"Java"}
-          />
-          <ProgressBar
-            value={85}
-            icon={
-              <RiTailwindCssFill
-                size={28}
-                className="text-cyan-400"
-              />
-            }
-            color={"bg-cyan-400"}
-            label={"tailwind"}
-          />
-          <ProgressBar
-            value={54}
-            icon={
-              <SiPhp
-                size={28}
-                className="text-indigo-400"
-              />
-            }
-            color={"bg-indigo-400"}
-            label={"PHP"}
-          />
-          <ProgressBar
-            value={56}
-            icon={
-              <SiMysql
-                size={28}
-                className="text-sky-500"
-              />
-            }
-            color={"bg-sky-500"}
-            label={"MySQL"}
-          />
-          <ProgressBar
-            value={48}
-            S
-            icon={
-              <FaGitAlt
-                size={28}
-                className="text-orange-600"
-              />
-            }
-            color={"bg-orange-600"}
-            label={"Git"}
-          />
-        </div>
+        <SectionHeading index="01">Technical Proficiency</SectionHeading>
+        <SkillTable skills={skills} table="suong_ranet" />
       </div>
     </motion.section>
   );

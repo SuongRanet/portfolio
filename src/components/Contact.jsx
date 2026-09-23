@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 
 const field =
-  "w-full min-h-12 rounded-xl border border-border bg-background/60 px-4 py-3 text-base text-text placeholder:text-muted outline-none focus:border-primary focus:ring-2 focus:ring-primary/25";
+  "w-full min-h-12 rounded-md border border-border bg-card/40 px-4 py-3 font-mono text-sm text-text placeholder:text-muted/70 outline-none backdrop-blur-sm transition-colors focus:border-primary focus:ring-1 focus:ring-primary/40";
 
 function Contact() {
   const form = useRef();
@@ -37,31 +37,54 @@ function Contact() {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className="flex flex-col gap-4 w-full">
-        <input
-          required
-          className={field}
-          name="name"
-          placeholder="Your Name"
-        />
-        <input type="hidden" name="time" value={new Date().toLocaleString()} />
-        <input
-          required
-          className={field}
-          name="name2"
-          placeholder="Your Email"
-        />
+      <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="contact-name" className="mono-label">
+            name
+          </label>
+          <input
+            required
+            id="contact-name"
+            className={field}
+            name="name"
+            autoComplete="name"
+            placeholder="Your Name"
+          />
+        </div>
 
-        <input
-          required
-          className={field}
-          name="message"
-          placeholder="Message"
-        />
+        <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="contact-email" className="mono-label">
+            email
+          </label>
+          <input
+            required
+            id="contact-email"
+            type="email"
+            className={field}
+            name="name2"
+            autoComplete="email"
+            placeholder="Your Email"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="contact-message" className="mono-label">
+            message
+          </label>
+          <textarea
+            required
+            id="contact-message"
+            rows={5}
+            className={`${field} resize-y`}
+            name="message"
+            placeholder="Message"
+          />
+        </div>
 
         <button
-          required
-          className="lift min-h-12 rounded-xl bg-primary hover:bg-primary-hover px-6 font-semibold text-on-primary shadow-lg shadow-primary/20"
+          className="lift inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 font-mono text-sm font-medium text-on-primary shadow-lg shadow-primary/20 hover:bg-primary-hover"
           type="submit"
         >
           Send

@@ -13,6 +13,7 @@ const ClickSpark = ({
   const canvasRef = useRef(null);
   const sparksRef = useRef([]);
   const animationRef = useRef(null);
+  const drawRef = useRef(null);
 
   // Viewport-sized (fixed) canvas instead of a full-document one: bounded memory
   // no matter how long the page is. Scaled for device pixel ratio.
@@ -99,11 +100,13 @@ const ClickSpark = ({
       });
 
       animationRef.current = sparksRef.current.length
-        ? requestAnimationFrame(draw)
+        ? requestAnimationFrame(ts => drawRef.current(ts))
         : null;
     },
     [sparkColor, sparkSize, sparkRadius, duration, easeFunc, extraScale]
   );
+
+  drawRef.current = draw;
 
   useEffect(() => {
     return () => {

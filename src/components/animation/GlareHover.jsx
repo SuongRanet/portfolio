@@ -47,7 +47,7 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "" }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`group glass relative isolate rounded-2xl overflow-hidden ${className}`}
+      className={`group relative isolate rounded-lg border border-border bg-card/40 backdrop-blur-sm shadow-lg overflow-hidden transition-colors duration-300 hover:border-primary/40 ${className}`}
     >
       <div
         aria-hidden

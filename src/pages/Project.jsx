@@ -1,11 +1,58 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import Card from "../components/Card";
+import SectionHeading from "../components/SectionHeading";
+import QueryConsole from "../components/QueryConsole";
 import { motion } from "framer-motion";
-import motobike from "../assets/images/motobike.jpg";
-import sms from "../assets/images/sms_ui.png";
-import port from "../assets/images/myport.png";
+import motobike from "../assets/images/optimized/motobike.webp";
+import sms from "../assets/images/optimized/sms_ui.webp";
+import port from "../assets/images/optimized/myport.webp";
+
+const projects = [
+  {
+    index: "01",
+    name: "MotorBike Rental",
+    description:
+      "MotorBike Rental system clear UI with CRUD. Customers browse bikes by model, search the catalogue, see daily rental prices, and add bikes to a cart, while admins manage the listings with full CRUD and track every booking in the rental history.",
+    tech: ["PHP", "HTML5", "CSS3", "Tailwind", "MySQL"],
+    img: motobike,
+    // Paste the URLs here to show the buttons, e.g.
+    // repo: "https://github.com/SuongRanet/motorbike-rental",
+    // demo: "https://...",
+  },
+  {
+    index: "02",
+    name: "School Management",
+    description:
+      "School Management System Digital. A Khmer-language admin dashboard for teachers, students, staff and user accounts, covering classes, subjects, schedules, attendance and grades, with charts for monthly attendance, average grades and department distribution.",
+    tech: ["ReactJS", "HTML5", "CSS3", "Tailwind", "MySQL", "JAVA"],
+    img: sms,
+  },
+  {
+    index: "03",
+    name: "Portfolio",
+    description:
+      "This is my portfolio. A responsive single-page site built with React and Tailwind CSS, featuring a dark and light theme, an animated Khmer typing intro, interactive skill bars, and a working contact form that sends email straight to my inbox.",
+    tech: ["ReactJS", "HTML5", "CSS3", "Tailwind"],
+    img: port,
+  },
+];
 
 const Project = () => {
+  const [where, setWhere] = useState(null);
+
+  const stacks = useMemo(
+    () => [...new Set(projects.flatMap((p) => p.tech))],
+    [],
+  );
+
+  const rows = where
+    ? projects.filter((p) => p.tech.includes(where))
+    : projects;
+
+  const sql = `SELECT * FROM projects${
+    where ? ` WHERE tech LIKE '%${where}%'` : ""
+  };`;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}
@@ -14,31 +61,29 @@ const Project = () => {
       transition={{ duration: 0.7 }}
     >
       <div className="w-full py-12 md:py-16">
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-english font-bold tracking-tight">
-            My Projects
-          </h1>
-        </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,19rem),1fr))] gap-6">
-          <Card
-            name={"MotorBike Rental"}
-            decription={"MotorBike Rental system clear UI with CRUD"}
-            tech={["PHP", "HTML5", "CSS3", "Tailwaind", "MySQL"]}
-            img={motobike}
-          />
-          <Card
-            name={"School Management"}
-            decription={"School Management System Digital "}
-            tech={["ReactJS", "HTML5", "CSS3", "Tailwaind", "MySQL", "JAVA"]}
-            img={sms}
-          />
-          <Card
-            name={"Portfolio"}
-            decription={"This is my portfolio"}
-            tech={["ReactJS", "HTML5", "CSS3", "Tailwaind"]}
-            img={port}
-          />
-        </div>
+        <SectionHeading index="02">My Projects</SectionHeading>
+        <QueryConsole
+          file="projects.sql"
+          sql={sql}
+          filters={stacks}
+          active={where}
+          onFilter={setWhere}
+          count={rows.length}
+          bodyClassName="grid grid-cols-[repeat(auto-fit,minmax(min(100%,19rem),1fr))] gap-5 p-4 sm:p-5"
+        >
+          {rows.map((project) => (
+            <Card
+              key={project.name}
+              index={project.index}
+              name={project.name}
+              description={project.description}
+              tech={project.tech}
+              img={project.img}
+              repo={project.repo}
+              demo={project.demo}
+            />
+          ))}
+        </QueryConsole>
       </div>
     </motion.div>
   );

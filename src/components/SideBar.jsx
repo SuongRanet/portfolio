@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 
 const linkClass = ({ isActive }) =>
-  `flex items-center min-h-11 px-4 rounded-xl transition-transform duration-200 hover:translate-x-1 ${
-    isActive ? "text-primary font-bold bg-primary/10" : "text-muted hover:text-text"
+  `flex items-center min-h-11 px-4 rounded-md font-mono text-sm transition-transform duration-200 hover:translate-x-1 ${
+    isActive
+      ? "text-primary bg-primary/10 border border-primary/30"
+      : "text-muted hover:text-text border border-transparent"
   }`;
 
 const SideBar = ({ isOpen, closeSidebar }) => {
@@ -26,7 +28,7 @@ const SideBar = ({ isOpen, closeSidebar }) => {
   }`}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold">Menu</h2>
+            <h2 className="font-mono text-sm tracking-[0.18em] uppercase">Menu</h2>
             <button onClick={closeSidebar} aria-label="Close sidebar" className="tap rounded-full hover:bg-primary/10">
               <X />
             </button>

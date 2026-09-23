@@ -11,6 +11,11 @@
 .font-english {
   font-family: "Nunito", sans-serif;
 }
+.font-mono,
+code,
+kbd {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 
 /* ---------- Design tokens (OKLCH) ---------- */
 :root {
@@ -27,6 +32,7 @@
   --border: oklch(0.2 0.02 260 / 0.1);
   --track: oklch(0.2 0.02 260 / 0.08);
 
+  --grid-line: oklch(0.2 0.02 260 / 0.05);
   --glass-bg: oklch(1 0 0 / 0.65);
   --glass-border: oklch(0.2 0.02 260 / 0.08);
   --glass-shadow:
@@ -48,6 +54,7 @@ html.dark {
   --border: oklch(1 0 0 / 0.09);
   --track: oklch(1 0 0 / 0.08);
 
+  --grid-line: oklch(1 0 0 / 0.035);
   --glass-bg: oklch(0.22 0.016 260 / 0.55);
   --glass-border: oklch(1 0 0 / 0.08);
   --glass-shadow:
@@ -57,6 +64,9 @@ html.dark {
 }
 
 @theme inline {
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-grid: var(--grid-line);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-on-primary: var(--on-primary);
@@ -93,6 +103,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 100% 6rem,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 6rem 100%,
     radial-gradient(60rem 40rem at 85% -10%, var(--glow), transparent 70%),
     radial-gradient(40rem 30rem at -10% 40%, var(--glow), transparent 70%);
   will-change: transform;
@@ -160,4 +172,58 @@ section[id] {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ---------- Engineer / terminal styling ---------- */
+
+/* Small uppercase monospace label, e.g. "01 / SKILLS". */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Bracketed accent text, e.g. <span class="bracket">stack</span>. */
+@utility bracket {
+  font-family: var(--font-mono);
+  color: var(--primary);
+  &::before {
+    content: "[";
+    opacity: 0.55;
+    margin-right: 0.15em;
+  }
+  &::after {
+    content: "]";
+    opacity: 0.55;
+    margin-left: 0.15em;
+  }
+}
+
+/* Terminal window chrome: three dots on a title bar. */
+@utility window-dots {
+  display: inline-flex;
+  gap: 0.375rem;
+  &::before,
+  &::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: currentColor;
+    opacity: 0.35;
+  }
+}
+
+/* Hairline rule that trails a section heading. */
+@utility rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--border),
+    color-mix(in oklch, var(--border) 20%, transparent)
+  );
 }

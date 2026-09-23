@@ -24,7 +24,7 @@ function ScrollTopButton() {
         })
       }
       aria-label="Scroll to top"
-      className="tap fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-4 sm:right-6 z-40 size-12 bg-primary text-on-primary rounded-full shadow-lg shadow-primary/30 hover:scale-110 transition-transform duration-300"
+      className="tap fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-4 sm:right-6 z-40 size-12 rounded-md border border-primary/40 bg-primary text-on-primary shadow-lg shadow-primary/30 hover:scale-110 transition-transform duration-300"
     >
       <FaArrowUp />
     </button>
