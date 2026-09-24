@@ -109,6 +109,12 @@ const skills = [
     icon: <TbBrandOpenai size={ICON} className="text-emerald-400" />,
   },
   {
+    label: "Postman",
+    tag: "daily",
+    category: "tools",
+    icon: <TbBrandPostman size={ICON} className="text-orange-500" />,
+  },
+  {
     label: "Claude Code",
     tag: "daily",
     category: "ai",

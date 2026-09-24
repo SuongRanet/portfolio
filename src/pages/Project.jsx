@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import motobike from "../assets/images/optimized/motobike.webp";
 import sms from "../assets/images/optimized/sms_ui.webp";
 import port from "../assets/images/optimized/myport.webp";
-import fixflow from "../assets/images/optimized/fixflow.webp";
+import fixflow from "../assets/images/optimized/FixFlow.webp";
 
 const projects = [
   {
