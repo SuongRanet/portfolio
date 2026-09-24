@@ -10,7 +10,14 @@ import {
 } from "react-icons/fa";
 import { FaNode } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiPhp, SiMysql, SiPostgresql, SiClaude, SiGooglegemini } from "react-icons/si";
+import {
+  SiPhp,
+  SiMysql,
+  SiPostgresql,
+  SiClaude,
+  SiGooglegemini,
+  SiPostman,
+} from "react-icons/si";
 import { TbBrandVscode, TbBrandOpenai } from "react-icons/tb";
 import { motion } from "framer-motion";
 import SectionHeading from "../components/SectionHeading";
@@ -112,7 +119,7 @@ const skills = [
     label: "Postman",
     tag: "daily",
     category: "tools",
-    icon: <TbBrandPostman size={ICON} className="text-orange-500" />,
+    icon: <SiPostman size={ICON} className="text-orange-500" />,
   },
   {
     label: "Claude Code",
