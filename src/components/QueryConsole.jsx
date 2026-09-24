@@ -24,7 +24,7 @@ function tokenize(sql) {
 }
 
 export const QueryLine = ({ sql }) => (
-  <p className="font-mono text-xs leading-relaxed sm:text-sm break-words">
+  <p className="font-mono text-xs leading-relaxed sm:text-sm wrap-break-word">
     <span className="text-muted select-none">{"> "}</span>
     {tokenize(sql).map((token, i) => (
       <span

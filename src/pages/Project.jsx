@@ -6,8 +6,26 @@ import { motion } from "framer-motion";
 import motobike from "../assets/images/optimized/motobike.webp";
 import sms from "../assets/images/optimized/sms_ui.webp";
 import port from "../assets/images/optimized/myport.webp";
+import fixflow from "../assets/images/optimized/fixflow.webp";
 
 const projects = [
+  {
+    index: "04",
+    name: "IT Support Ticket",
+    description:
+      "FixFlow — A modern IT Support Ticket Management System for creating, tracking, managing, and resolving IT support requests. It features a user-friendly interface, real-time updates, and comprehensive reporting tools to streamline IT support operations.",
+    tech: [
+      "ReactJS",
+      "Express",
+      "PostgreSQL",
+      "Tailwind",
+      "Node.JS",
+      "TypeScript",
+    ],
+    img: fixflow,
+    repo: "https://github.com/SuongRanet/FixFlow",
+    demo: "https://fixflowit.vercel.app/",
+  },
   {
     index: "01",
     name: "MotorBike Rental",
@@ -34,6 +52,8 @@ const projects = [
       "This is my portfolio. A responsive single-page site built with React and Tailwind CSS, featuring a dark and light theme, an animated Khmer typing intro, interactive skill bars, and a working contact form that sends email straight to my inbox.",
     tech: ["ReactJS", "HTML5", "CSS3", "Tailwind"],
     img: port,
+    repo: "https://github.com/SuongRanet/portfolio",
+    demo: "https://suongranet-portfolio.vercel.app/",
   },
 ];
 
