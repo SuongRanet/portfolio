@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import QueryConsole from "../components/QueryConsole";
 import { motion } from "framer-motion";
 import motobike from "../assets/images/optimized/motobike.webp";
-import sms from "../assets/images/optimized/image.webp.webp";
+import sms from "../assets/images/optimized/image.webp";
 import port from "../assets/images/optimized/myport.webp";
 import fixflow from "../assets/images/optimized/FixFlow.webp";
 
