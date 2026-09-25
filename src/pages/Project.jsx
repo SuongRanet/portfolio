@@ -27,6 +27,23 @@ const projects = [
     demo: "https://fixflowit.vercel.app/",
   },
   {
+    index: "02",
+    name: "School Management System",
+    description:
+      "A comprehensive School Management System that streamlines administrative tasks, enhances communication, and improves overall efficiency. It includes features for student enrollment, attendance tracking, grade management, and parent-teacher communication.",
+    tech: [
+      "ReactJS",
+      "Express",
+      "PostgreSQL",
+      "Tailwind",
+      "Node.JS",
+      "TypeScript",
+    ],
+    img: "HunSenTurey School Management System",
+    repo: "https://github.com/SuongRanet",
+    demo: "https://hunsenturey-school.vercel.app/",
+  },
+  {
     index: "01",
     name: "MotorBike Rental",
     description:
@@ -34,16 +51,8 @@ const projects = [
     tech: ["PHP", "HTML5", "CSS3", "Tailwind", "MySQL"],
     img: motobike,
     // Paste the URLs here to show the buttons, e.g.
-    // repo: "https://github.com/SuongRanet/motorbike-rental",
+    repo: "https://github.com/SuongRanet",
     // demo: "https://...",
-  },
-  {
-    index: "02",
-    name: "School Management",
-    description:
-      "School Management System Digital. A Khmer-language admin dashboard for teachers, students, staff and user accounts, covering classes, subjects, schedules, attendance and grades, with charts for monthly attendance, average grades and department distribution.",
-    tech: ["ReactJS", "HTML5", "CSS3", "Tailwind", "MySQL", "JAVA"],
-    img: sms,
   },
   {
     index: "03",
