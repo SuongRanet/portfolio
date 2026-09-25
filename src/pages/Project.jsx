@@ -4,7 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import QueryConsole from "../components/QueryConsole";
 import { motion } from "framer-motion";
 import motobike from "../assets/images/optimized/motobike.webp";
-import sms from "../assets/images/optimized/sms_ui.webp";
+import sms from "../assets/images/optimized/image.webp.webp";
 import port from "../assets/images/optimized/myport.webp";
 import fixflow from "../assets/images/optimized/FixFlow.webp";
 
@@ -39,7 +39,7 @@ const projects = [
       "Node.JS",
       "TypeScript",
     ],
-    img: "HunSenTurey School Management System",
+    img: sms,
     repo: "https://github.com/SuongRanet",
     demo: "https://hunsenturey-school.vercel.app/",
   },
