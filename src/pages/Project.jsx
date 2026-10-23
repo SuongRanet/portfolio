@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Card from "../components/Card";
 import SectionHeading from "../components/SectionHeading";
 import QueryConsole from "../components/QueryConsole";
@@ -7,6 +7,7 @@ import motobike from "../assets/images/optimized/motobike.webp";
 import sms from "../assets/images/optimized/image.webp";
 import port from "../assets/images/optimized/myport.webp";
 import fixflow from "../assets/images/optimized/FixFlow.webp";
+import cambo from "../assets/images/optimized/cambo.webp";
 
 const projects = [
   {
@@ -63,6 +64,16 @@ const projects = [
     img: port,
     repo: "https://github.com/SuongRanet/portfolio",
     demo: "https://suongranet-portfolio.vercel.app/",
+  },
+  {
+    index: "05",
+    name: "CamboWorker",
+    description:
+      "Job Portal is a full-stack web application designed to connect job seekers with employers through a simple and user-friendly platform. Job seekers can browse available job opportunities, search for positions that match their skills, and submit applications online. Employers can create and manage job postings, review applications, and manage candidates efficiently.",
+    tech: ["ReactJS", "HTML5", "CSS3", "Tailwind ", "MongoDB ", "ExpressJS","TypeScript"],
+    img: cambo,
+    repo: "https://github.com/SuongRanet/Job-potal",
+    demo: "https://job-potal-seeker.vercel.app/",
   },
 ];
 
