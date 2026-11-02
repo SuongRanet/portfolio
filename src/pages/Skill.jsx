@@ -1,4 +1,4 @@
-import React from "react";
+import { SiExpress } from "react-icons/si";
 import SkillTable from "../components/SkillTable";
 import {
   FaHtml5,
@@ -66,6 +66,13 @@ const skills = [
     category: "backend",
     color: "bg-red-500",
     icon: <FaJava size={ICON} className="text-red-500" />,
+  },
+  {
+    label: "Express",
+    value: 79,
+    category: "backend",
+    color: "bg-black",
+    icon: <SiExpress size={ICON} className="text-black" />,
   },
   {
     label: "Tailwind",
